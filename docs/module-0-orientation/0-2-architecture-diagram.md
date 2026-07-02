@@ -4,38 +4,10 @@
 
 ## 现在的人工流程（要被取代的那个）
 
-```mermaid
-sequenceDiagram
-    actor U as Requester
-    participant SEC as Security Team
-    participant PET as Platform Team
-    participant REG as Artifact Registry
-
-    U->>SEC: 1. 开 ticket："帮忙 scan 一下这个 artifact"
-    SEC-->>SEC: 人工跑 security scan
-    SEC->>U: 2. Ticket 更新：scan 通过了
-    U->>PET: 3. 再开一张 ticket，附上前面的 approval
-    PET-->>REG: 4. 人工把 artifact upload 上去
-```
-
 两张 ticket、两个 team，最后还有一个纯人工的 upload 步骤。慢，而且每次交接都是一个容易出岔子
 的地方。
 
 ## 目标状态（自动化之后）
-
-```mermaid
-flowchart LR
-    A[Artifact 提交] --> B["Jira ticket 创建<br/>（自动 intake）"]
-    B --> C{Security scan\nautomation}
-    C -->|fail| B
-    C -->|pass，结果写回 ticket| D[Jenkins pipeline]
-    D --> E{Artifact 类型？}
-    E -->|binary| F1[Generic upload]
-    E -->|Docker image| F2[docker push]
-    E -->|Helm chart| F3[helm push]
-    E -->|Terraform module| F4[Terraform publish]
-    F1 & F2 & F3 & F4 --> G[(Artifact Registry)]
-```
 
 四个系统，其中三个已经独立存在了：
 
