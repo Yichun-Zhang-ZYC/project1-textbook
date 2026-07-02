@@ -1,0 +1,80 @@
+site_name: CI/CD Artifact 上传自动化学习笔记
+site_description: >-
+  个人学习笔记：怎么搭一条 CI/CD pipeline，把 artifact 先 scan 再 upload 到 artifact registry。
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - 首页: index.md
+  - Module 0 - 入门须知:
+      - 术语表 Glossary: module-0-orientation/0-1-glossary.md
+      - 架构图: module-0-orientation/0-2-architecture-diagram.md
+      - Artifact 类型: module-0-orientation/0-3-artifact-types.md
+      - Capstone 场景: module-0-orientation/0-4-project-requirements.md
+  - Module 1 - 开发环境:
+      - Terminal 基础: module-1-dev-environment/1-1-terminal-basics.md
+      - Git 基础: module-1-dev-environment/1-2-git-basics.md
+      - GitHub 基础: module-1-dev-environment/1-3-github-basics.md
+      - VS Code 配置: module-1-dev-environment/1-4-vscode-setup.md
+  - Module 2 - CI/CD 与 Jenkins:
+      - 什么是 CI/CD: module-2-cicd-jenkins/2-1-what-is-cicd.md
+      - Jenkins 架构: module-2-cicd-jenkins/2-2-jenkins-architecture.md
+      - Job 类型: module-2-cicd-jenkins/2-3-job-types.md
+      - Declarative Pipeline 结构: module-2-cicd-jenkins/2-4-declarative-pipeline-structure.md
+      - Build Parameters: module-2-cicd-jenkins/2-5-build-parameters.md
+      - Triggers: module-2-cicd-jenkins/2-6-triggers.md
+      - Parent/Child Jobs: module-2-cicd-jenkins/2-7-parent-child-jobs.md
+      - Credentials: module-2-cicd-jenkins/2-8-credentials.md
+  - Module 3 - Groovy 与 Jenkinsfile:
+      - Groovy 基础: module-3-groovy-jenkinsfile/3-1-groovy-basics.md
+      - Script Blocks: module-3-groovy-jenkinsfile/3-2-script-blocks.md
+      - Conditional Stages: module-3-groovy-jenkinsfile/3-3-conditional-stages.md
+      - Debugging: module-3-groovy-jenkinsfile/3-4-debugging.md
+  - Module 4 - Jira:
+      - Jira 基本概念: module-4-jira/4-1-jira-concepts.md
+      - Jira REST API: module-4-jira/4-2-jira-rest-api.md
+      - Webhooks & Triggers: module-4-jira/4-3-webhooks-and-triggers.md
+      - 为什么 Query 很贵: module-4-jira/4-4-why-querying-is-expensive.md
+  - Module 5 - Artifactory:
+      - Repository 类型: module-5-artifactory/5-1-repository-types.md
+      - JFrog CLI: module-5-artifactory/5-2-1-jfrog-cli.md
+      - Docker Push: module-5-artifactory/5-2-2-docker-push.md
+      - Helm Push: module-5-artifactory/5-2-3-helm-push.md
+      - Terraform Modules: module-5-artifactory/5-2-4-terraform-modules.md
+      - Destination Path 设计: module-5-artifactory/5-3-destination-path-design.md
+  - Module 6 - 辅助技能:
+      - YAML 基础: module-6-supporting-skills/6-1-yaml-basics.md
+      - Bash in Jenkins: module-6-supporting-skills/6-2-bash-in-jenkins.md
+      - REST API 概念: module-6-supporting-skills/6-3-rest-api-concepts.md
+  - Module 7 - Capstone:
+      - Mock Implementation: module-7-capstone/7-1-option-c-mock-implementation.md
+      - Downstream Job Branching: module-7-capstone/7-2-downstream-job-branching.md
+      - Debug Scenarios: module-7-capstone/7-3-debug-scenarios.md
