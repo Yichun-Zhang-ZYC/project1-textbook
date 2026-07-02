@@ -74,6 +74,7 @@ nav:
       - YAML 基础: module-6-supporting-skills/6-1-yaml-basics.md
       - Bash in Jenkins: module-6-supporting-skills/6-2-bash-in-jenkins.md
       - REST API 概念: module-6-supporting-skills/6-3-rest-api-concepts.md
+      - 跨系统集成设计原则: module-6-supporting-skills/6-4-integration-design-principles.md
   - Module 7 - Capstone:
       - Mock Implementation: module-7-capstone/7-1-option-c-mock-implementation.md
       - Downstream Job Branching: module-7-capstone/7-2-downstream-job-branching.md
